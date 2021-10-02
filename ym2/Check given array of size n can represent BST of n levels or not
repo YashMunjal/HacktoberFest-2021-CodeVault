@@ -1,0 +1,53 @@
+class newNode():
+ 
+    def __init__(self, data):
+        self.key = data
+        self.left = None
+        self.right = None
+ 
+# To create a Tree with n levels. We always
+# insert new node to left if it is less than
+# previous value.
+def createNLevelTree(arr, n):
+    root = newNode(arr[0])
+    temp = root
+    for i in range(1, n):
+        if (temp.key > arr[i]):
+            temp.left = newNode(arr[i])
+            temp = temp.left
+        else:
+            temp.right = newNode(arr[i])
+            temp = temp.right
+     
+    return root
+     
+# Please refer below post for details of this
+# function.
+# https:# www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+def isBST(root, min, max):
+     
+    if (root == None):
+        return True
+         
+    if (root.key < min or root.key > max):
+        return False
+         
+    # Allow only distinct values
+    return (isBST(root.left, min, (root.key) - 1) and
+            isBST(root.right,(root.key) + 1, max))
+ 
+# Returns tree if given array of size n can
+# represent a BST of n levels.
+def canRepresentNLevelBST(arr, n):
+     
+    root = createNLevelTree(arr, n)
+    return isBST(root, 0, 2**32)
+ 
+# Driver code
+arr = [512, 330, 78, 11, 8]
+n = len(arr)
+ 
+if (canRepresentNLevelBST(arr, n)):
+    print("Yes")
+else:
+    print("No")
