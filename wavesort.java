@@ -1,5 +1,5 @@
 // A O(n) Java program to sort an input array in wave form
-import java .util.*;
+import java.util.*;
 
 class Solution
 {
