@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Border ProgressBar</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: #e6bd86;
+        }
+        svg{
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        rect{
+            height: 300px;
+            width: 300px;
+        }
+        .front>rect{
+            stroke: #4a3e33;
+            stroke-width: 20;
+            fill: #207479;
+            animation: animate 4s linear infinite;
+        }
+        @keyframes animate {
+            0%{
+                stroke-dasharray: 0 400%;
+            }
+            100%{
+                stroke-dasharray: 400% 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <svg class="back">
+            <rect></rect>
+        </svg>
+        <svg class="front">
+            <rect></rect>
+        </svg>
+    </div>
+</body>
+</html>
