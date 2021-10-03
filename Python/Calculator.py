@@ -1,14 +1,19 @@
-def add(a, b):
-    return a + b
+# Program make a simple calculator
 
-def subtract(a, b):
-    return a - b
+def add(x, y):
+    return x + y
 
-def multiply(a, b):
-    return a * b
-  
-def divide(a, b):
-    return a / b
+
+def subtract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def divide(x, y):
+    return x / y
 
 
 print("Select operation.")
@@ -18,7 +23,10 @@ print("3.Multiply")
 print("4.Divide")
 
 while True:
+    
     choice = input("Enter choice(1/2/3/4): ")
+
+    
     if choice in ('1', '2', '3', '4'):
         num1 = float(input("Enter first number: "))
         num2 = float(input("Enter second number: "))
@@ -34,9 +42,6 @@ while True:
 
         elif choice == '4':
             print(num1, "/", num2, "=", divide(num1, num2))
-        next_cal = input("Let's do next calculation? (yes/no): ")
-        if next_cal == "no":
-          break
-    
+        break
     else:
         print("Invalid Input")
