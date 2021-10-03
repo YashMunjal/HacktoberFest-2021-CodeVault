@@ -5,7 +5,7 @@ Author: Rishabh Rathore
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] arr ={-18,-10,-7,-2,0,4,45,55,65,75,79,99};
+        int[] arr ={-18,-10,-7,-2,0,4,45,55,65,75,79,100};
         int target = 4;
         int ans = binarySearch(arr,target ) ;
         System.out.println(ans);
